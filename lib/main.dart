@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qiita_me/screens/search_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; 
 
-void main() {
+Future<void> main() async{
+    await dotenv.load(fileName: '.env');
     runApp(const MainApp());
 }
 
@@ -19,7 +21,7 @@ class MainApp extends StatelessWidget {
                     backgroundColor: Color(0xFF007AC5),
                 ),
                 textTheme: Theme.of(context).textTheme.apply(
-                    bodyColor: Colors.white,
+                    bodyColor: Colors.black,
                 ),
             ),
             home: const SearchScreen(), // SearchScreenを設定
